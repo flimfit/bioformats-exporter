@@ -25,13 +25,19 @@
 
     <repositories>
         <repository>
-            <id>openmicroscopy</id>
-            <name>Open Microscopy</name>
-            <layout>default</layout>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>ome</id>
+            <name>OME Artifactory</name>
             <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+        </repository>
+        <repository>
+            <id>unidata</id>
+            <name>Unidata Artifactory</name>
+            <url>https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/</url>
         </repository>
     </repositories>
 
@@ -51,6 +57,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
