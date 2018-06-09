@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>bioformats-exporter</groupId>
+    <artifactId>bioformats-exporter</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+
+    <name>Extended Bio-Formats command line tools</name>
+    <description>Extended Bio-Formats command line tools for reading and converting files</description>
+    <url>https://www.openmicroscopy.org/bio-formats</url>
+    <inceptionYear>2005</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Simplified BSD License</name>
+            <url>https://opensource.org/licenses/BSD-2-Clause</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <repositories>
+        <repository>
+            <id>openmicroscopy</id>
+            <name>Open Microscopy</name>
+            <layout>default</layout>
+            <url>https://artifacts.openmicroscopy.org/artifactory/maven/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>ome</groupId>
+            <artifactId>bioformats_package</artifactId>
+            <version>5.8.2</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <directory>target</directory>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <finalName>${project.artifactId}-${project.version}</finalName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <developers>
+        <developer>
+            <id>sean</id>
+            <name>Sean Warren</name>
+            <email>s.warren@garvan.org.au</email>
+            <url>https://www.garvan.org.au/people/seawar</url>
+            <organization>Garvan Institute of Medical Research</organization>
+            <organizationUrl>https://www.garvan.org.au/</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>11</timezone>
+        </developer>
+    </developers>
+</project>
