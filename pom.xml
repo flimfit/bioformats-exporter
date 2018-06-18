@@ -53,6 +53,7 @@
     <build>
         <directory>target</directory>
         <defaultGoal>install</defaultGoal>
+        <sourceDirectory>src/loci/formats/tools</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
